@@ -36,5 +36,9 @@
 
 ### Data source
 * [직방] (https://zigbang.com/)
+* 데이터 크롤링을 위해 활용한 URL 3개
+ * 지하철 역정보: https://api.zigbang.com/v1/search/subway?q=
+ * 지하철 역근처 방 리스트: https://api.zigbang.com/v2/items/ad/98?radius=1
+ * 방의 세부정보: https://api.zigbang.com/v1/items?item_ids=4324471
 
 ###### 이 프로젝트는 [Berlin rent map](http://www.citylab.com/housing/2016/01/a-station-by-station-subway-map-of-berlin-rents/423102/)에서 영감을 얻었습니다.
