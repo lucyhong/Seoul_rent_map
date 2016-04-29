@@ -36,3 +36,5 @@
 
 ### Data source
 * [직방] (https://zigbang.com/)
+
+###### 이 프로젝트는 [Berlin rent map](http://www.citylab.com/housing/2016/01/a-station-by-station-subway-map-of-berlin-rents/423102/)에서 영감을 얻었습니다.
