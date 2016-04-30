@@ -11,7 +11,7 @@ ITEM_URL = "https://www.zigbang.com/items/{}"
 def get_room_list(station_id):
     # 방 정보 넣을 리스트 생성
     r = requests.get('%s/v2/items/ad/%s?radius=1' % (BASEURL, station_id)).json()
-    return [i.get('simple_item') for i in r['list_items']]
+    return [i.get('simple_item') for i in r['list_items'] if 'simple_item' in i.keys()]
 
 
 def filter_room_list(room_list):
