@@ -11,14 +11,7 @@ ITEM_URL = "https://www.zigbang.com/items/{}"
 def get_room_list(station_id):
     # 방 정보 넣을 리스트 생성
     r = requests.get('%s/v2/items/ad/%s?radius=1' % (BASEURL, station_id)).json()
-    return [i.get('simple_item') for i in r['list_items']]
-
-
-def filter_room_list(room_list):
-    # None값 제외한 최종 방 리스트 만들기
-    filtered = list(filter(None, room_list))
-    return [i.get('item_id') for i in filtered]
-
+    return [i.get('simple_item') for i in r['list_items'] if 'simple_item' in i.keys()]
 
 def get_deposit_rent(room_list, limit=None):
     deposit_list, rent_list = [], []
@@ -45,7 +38,6 @@ if __name__=='__main__':
     for station_id in station_list:
         print(station_id)
         room_list = get_room_list(station_id)
-        room_list = filter_room_list(room_list)
         deposit_list, rent_list = get_deposit_rent(room_list, limit=5)
         
         size_list = [] #리스트자꾸 만드는건 별로 좋은건 아니라고 하네요.
